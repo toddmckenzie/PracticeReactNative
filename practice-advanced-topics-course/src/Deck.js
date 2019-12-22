@@ -3,14 +3,18 @@ import { View, Animated, Text, PanResponder } from 'react-native';
 import { Card, Button } from 'react-native-elements'
 
 
-const Deck = (props) => {
+class Deck extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {}
+    }
 
-    
+    render() {
     return (
         <Card
-        // key={props.items.id}
-        title={props.item.text}
-        image={{ uri: props.item.uri }}
+        // key={this.props.items.id}
+        title={this.props.item.text}
+        image={{ uri: this.props.item.uri }}
         >
         <Text style={{ marginBottom: 10 }}> Just more customizations </Text>
         <Button
@@ -20,6 +24,7 @@ const Deck = (props) => {
         />
         </Card>
     )
+    }
 }
 
 export default Deck;
