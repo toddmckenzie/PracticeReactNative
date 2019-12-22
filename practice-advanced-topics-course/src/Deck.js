@@ -1,14 +1,16 @@
 import React from 'react';
-import { View, Animated, Text } from 'react-native';
+import { View, Animated, Text, PanResponder } from 'react-native';
 import { Card, Button } from 'react-native-elements'
 
+
 const Deck = (props) => {
+
+    
     return (
         <Card
-        key={props.items.id}
+        // key={props.items.id}
         title={props.item.text}
         image={{ uri: props.item.uri }}
-
         >
         <Text style={{ marginBottom: 10 }}> Just more customizations </Text>
         <Button
