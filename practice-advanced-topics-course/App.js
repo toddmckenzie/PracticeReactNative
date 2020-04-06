@@ -14,7 +14,6 @@ const DATA = [
 ];
 
 export default function App() {
-
   return (
     <ScrollView style={styles.container}>
     {DATA.map(item => {
