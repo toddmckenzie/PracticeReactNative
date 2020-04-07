@@ -24,7 +24,6 @@ class Deck extends React.Component {
     return (
         <Animated.View style={this.state.position.getLayout()} {...this.state.panResponder.panHandlers}>
             <Card
-            // key={this.props.items.id}
             title={this.props.item.text}
             image={{ uri: this.props.item.uri }}
             >
