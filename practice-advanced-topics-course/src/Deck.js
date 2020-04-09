@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Animated, Text, PanResponder } from 'react-native';
+import { View, Animated, Text, PanResponder, Dimensions } from 'react-native';
 import { Card, Button } from 'react-native-elements'
 
+const SCREEN_WIDTH = Dimensions.get('window').width;   //gets the width of the device one is using.
 
 class Deck extends React.Component {
     constructor(props){
