@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Animated, Text, PanResponder, Dimensions } from 'react-native';
-import { Card, Button } from 'react-native-elements'
+import { Card, Button } from 'react-native-elements';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;   //gets the width of the device one is using.
 
@@ -14,7 +14,9 @@ class Deck extends React.Component {
             onPanResponderMove: (event, gesture) => {
                 position.setValue({ x: gesture.dx, y: gesture.dy })
             },
-            onPanResponderRelease: () => {}
+            onPanResponderRelease: (event, gesture) => {
+                this.resetPosition(gesture.vx, gesture.vy);
+            }
         })
 
         this.state = { panResponder, position };
@@ -23,16 +25,22 @@ class Deck extends React.Component {
 
     }
 
-      getCardStyle = () => {
-          const { position } = this.state;
-          const rotate = position.x.interpolate({ //rotates the card//
-              inputRange:  [-SCREEN_WIDTH * 1.5, 0, SCREEN_WIDTH * 1.5],
-              outputRange: ['-120deg', '0deg', '120deg']
-          })
-          return {
-              ...position.getLayout(),
-              transform: [{ rotate }]
-          }
+    resetPosition = (x1, y1) => { //resets to original position on release.
+        Animated.spring(this.state.position, {
+            toValue: { x: x1, y: y1}
+        }).start();
+    }
+
+    getCardStyle = () => {
+        const { position } = this.state;
+        const rotate = position.x.interpolate({ //rotates the card//
+            inputRange:  [-SCREEN_WIDTH * 1.5, 0, SCREEN_WIDTH * 1.5],
+            outputRange: ['-120deg', '0deg', '120deg']
+        })
+        return {
+            ...position.getLayout(),
+                transform: [{ rotate }]
+            }
         
     }
     
