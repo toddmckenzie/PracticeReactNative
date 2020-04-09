@@ -27,7 +27,7 @@ class Deck extends React.Component {
             title={this.props.item.text}
             image={{ uri: this.props.item.uri }}
             >
-            <Text style={{ marginBottom: 10 }}> Just more customizations </Text>
+            <Text style={{ marginBottom: 10 }}> customizations </Text>
             <Button
                 icon={{ name: 'code' }}z
                 backgroundColor="#03A9F4"

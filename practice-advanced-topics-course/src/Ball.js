@@ -20,10 +20,10 @@ class Ball extends Component {
 
 const styles = {
     ball: {
-        height: 60,
-        width: 60,
-        borderRadius: 30,
-        borderWidth: 30,
+        height: 70,
+        width: 70,
+        borderRadius: 20,
+        borderWidth: 20,
         borderColor: 'black'
     }
 }
