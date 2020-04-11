@@ -37,6 +37,7 @@ class Deck extends React.Component {
             inputRange:  [-SCREEN_WIDTH * 1.5, 0, SCREEN_WIDTH * 1.5],
             outputRange: ['-120deg', '0deg', '120deg']
         })
+        console.log(rotate)
         return {
             ...position.getLayout(),
                 transform: [{ rotate }]
