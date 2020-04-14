@@ -15,7 +15,7 @@ class Deck extends React.Component {
                 position.setValue({ x: gesture.dx, y: gesture.dy })
             },
             onPanResponderRelease: (event, gesture) => {
-                this.resetPosition(gesture.vx, gesture.vy);
+                this.resetPosition(gesture.vx, gesture.vy); //grabs the original position to send to reset postion.
             }
         })
 
